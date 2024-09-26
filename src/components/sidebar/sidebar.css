@@ -1,0 +1,90 @@
+.sidebar{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(237, 242, 245);
+    min-height: 100vh; 
+    padding: 25px 15px;
+}
+.sidebar-top{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-top .newchat{
+    margin-top: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: #e6eaf1;
+    border-radius: 50px;
+    font-size: 14px;
+    color: gray;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.sidebar-top .newchat:hover{
+    background-color: #dadde3;
+
+}
+.sidebar-top .recent{
+    margin-top: 30px;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    
+    overflow: scroll;
+}
+.sidebar-top .rec{
+    max-height: 49vh;
+    overflow-y: scroll;
+    padding-right: 15px;
+}
+.sidebar-top .rec::-webkit-scrollbar{
+    width: 8px;
+    background-color: #e6eaf1;
+    border-radius: 5px ;
+}
+.sidebar-top .rec::-webkit-scrollbar-thumb {
+    background-color: #c4c4c4; /* Customize scrollbar color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.sidebar-top  .recent-list{
+    background-color:#e5e7eb;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 20px;
+    animation: rec 1.5s ease-in-out;
+    
+
+}
+@keyframes rec {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+    
+}
+.recent-list{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+    margin-left: 15px;
+   
+}
+.sidebar-top .recent-list:hover{
+    background-color:#d3d4d6;
+}
+.sidebar-bottom{
+    display: flex;
+    flex-direction: column;  
+}
+img{
+    width: 20px;
+    cursor: pointer;
+}
