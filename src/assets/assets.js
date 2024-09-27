@@ -15,7 +15,8 @@ import send_icon from './send_icon.png'
 import gemini_icon from './gemini_icon.png'
 import user from './user.png'
 import signup from './signup.png';
-import login from './login.png'
+import login from './login.png';
+import logout from './exit.png'
 
 export const assets = {
     history_icon,
@@ -35,5 +36,6 @@ export const assets = {
     gemini_icon,
     user,
     signup,
-    login
+    login,
+    logout
 }

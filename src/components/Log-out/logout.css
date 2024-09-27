@@ -1,0 +1,28 @@
+.logout-conatiner{
+    max-width: 70%;
+    margin: 100px auto;
+    background-color:  rgb(212, 224, 232);
+    padding: 50px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logout-conatiner p{
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+.logout-conatiner div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.logout-conatiner button{
+    width: 70px;
+}
+.logout-conatiner .no{
+    background-color: rgb(237, 146, 65);
+}
+.logout-conatiner .no:hover{
+    background-color: rgb(203, 107, 22);
+}

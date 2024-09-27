@@ -1,5 +1,6 @@
-import React, { useState, createContext } from 'react'
+import React, { useState, createContext, useEffect } from 'react'
 import run from '../config/config'
+import { json } from 'react-router-dom';
 export const FunctionContext = createContext();
 
 export default function Context(props) {
@@ -10,18 +11,31 @@ export default function Context(props) {
     const[displayAnswer, setDisplayAnswer]=useState("");
     const[input, setInput]= useState("");
     const[loading, setLoading]=useState(false);
-    // const delayPara = (index, nextWord)=>{
-    //     setTimeout(function(){
-    //         setResultData(prev=>prev+nextWord);
-    //     }, 75*index)
-    // }
+
+
+    // 
+    const[email, setEmail]=useState("");
+    const[name, setName]=useState("");
+    const[password, setPassword]=useState("");
+    const[submit, setSubmit] =useState(false);
+    // 
+    const[user, setUser]=useState({})
+    const saveUser=(user)=>{
+        // setUser(user);
+        localStorage.setItem("user", JSON.stringify(user));
+    }
+    const saveSub = (sub)=>{
+        
+        localStorage.setItem("submitted", sub);
+    }
+
+    // 
+    
+
 
     const newChat=()=>{
         setShowingResult(false);
     }
-
-    
-
 
     const onSent = async (prompt) => { 
         const question = prompt !== undefined ? prompt : input; 
@@ -66,9 +80,6 @@ export default function Context(props) {
             }
         }
     
-            
-
-            // setDisplayAnswer(newA); // Set the answer
             delayedMessage(newA)
             setLoading(false);
         }catch (error) {
@@ -108,7 +119,20 @@ export default function Context(props) {
         displayAnswer,
         loading,
         onSent,
-        newChat
+        newChat,
+        email,
+        setEmail,
+        name,
+        setName,
+        submit, 
+        setSubmit,
+        saveUser,
+        user,
+        setUser,
+        saveSub,
+        password,
+        setPassword
+
     }
 
   return (

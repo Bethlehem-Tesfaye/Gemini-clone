@@ -1,0 +1,62 @@
+.user-container{
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background-color:  rgb(212, 224, 232);
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 40px;
+    z-index: 2;
+}
+.profile-pic{
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 50%;
+
+}
+.profile-pic img {
+    width: 70px;
+    
+}
+
+.container .sign img{ 
+    width: 20px; 
+
+}
+.sign{
+    display: flex;
+    gap: 20px;
+}
+.sign a {
+    text-decoration: none;
+    color: black;
+}
+.sign-up, .log-in{
+    display: flex;
+    gap: 20px;
+    background-color:  rgb(237, 242, 245);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+.sign-up:hover ,.log-in:hover{
+    background-color:  rgb(209, 217, 222);
+}
+.policy{
+    font-size: 15px;
+}
+.log-out{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.log-out a{
+    text-decoration: none;
+    color: black;
+}

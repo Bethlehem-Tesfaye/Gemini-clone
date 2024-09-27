@@ -1,0 +1,47 @@
+.signup-container{
+    width: 70%;
+    margin:  100px auto;
+    padding: 50px;
+    background-color:  rgb(237, 242, 245);
+    border-radius: 40px;
+    
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+input{
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+
+}
+button{
+    width: 100px;
+    padding: 10px;
+    border-radius: 20px;
+    align-self: center;
+    border: white solid 2px;
+    outline: none;
+    background-color: rgb(163, 242, 232);
+
+}
+button:hover{
+    background-color: rgb(107, 219, 204);
+}
+.error-message{
+    background-color: rgb(244, 172, 146);
+    padding: 5px 20px;
+    border-radius: 30px;
+    width: unset !important;
+}
+
+@media (max-width:600px){
+    .signup-container{
+        width: 80%;
+        height: 50vh;
+    }
+    
+}

@@ -4,34 +4,44 @@ import './Main.css'
 import { useState } from 'react'
 import { useContext } from 'react'
 import { FunctionContext } from '../../context/Context'
-import User from '../../user/User'
+import User from '../user/User'
 
 export default function Main() {
 
-   const {showingResult, displayQuestion,setShowingResult, input, setInput,displayAnswer, loading, onSent}= useContext(FunctionContext);
+   const {showingResult, displayQuestion,setShowingResult, input, setInput,displayAnswer, loading, onSent, name, email, setName, setEmail}= useContext(FunctionContext);
 //    const card1 = document.querySelector(".cards .crad-1 p").i;
 const samples =["Suggest beautiful places to see on an upcoming road trip", "Brief summarize this concept: urban planning", "Brainstorm team bonding activities for our work retreat", "Improve the readability of the following code"];
+const [open, setOpen]=useState(false);
+
+const getName = JSON.parse(localStorage.getItem("user")) || "User";
 
 
 
+
+const toggleOpen =()=>{
+    setOpen(prev=>!prev);
+}
+
+const handleopen=(e)=>{
+    if(e.target!==document.querySelector(".pic")){
+        setOpen(false);
+    }
+}
   return (
 
     <>
        
-        <div className="main">
+        <div className="main" onClick={(e)=>{handleopen(e)}}  >
             <div className="main-top">
                 <p>Gemini</p>
-                <img onClick={()=>{
-                    return(
-                        <User></User>
-                    )
-                }} src={assets.user_icon} alt="" />
+                <img className='pic' onClick={()=>toggleOpen()} src={assets.user} alt="" />
+                {open? <User></User>:null}
             </div>
             <div className="main-cont">
 
             {!showingResult? 
             <><div className="greet">
-            <p><span>Hello, Dev.</span><br /> How can i help you today?</p>
+            <p><span>Hello, {getName.name=="" || getName=="User"? "User":getName.name}.</span><br /> How can i help you today?</p>
         </div><div className="cards">
                 <div onClick={()=>setInput(samples[0])} className="card card-1">
                     <p>{samples[0]}</p>
